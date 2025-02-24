@@ -1,18 +1,4 @@
-# Copyright (c) 2022-2024, NVIDIA CORPORATION. All rights reserved.
-#
-# NVIDIA CORPORATION and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto. Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION is strictly prohibited.
-#
-
 import os
-
-# from isaacsim.core.utils.extensions import enable_extension
-# enable_extension("isaacsim_robot_motion.motion_generation")
-
-
 import isaacsim.robot_motion.motion_generation as mg
 from isaacsim.core.prims import SingleArticulation
 from isaacsim.core.utils.extensions import get_extension_path_from_name
@@ -25,7 +11,6 @@ class RMPFlowController(mg.MotionPolicyController):
             rmpflow_config_path="rmpflow/cs66_rmpflow_common.yaml",
             urdf_path="/mnt/disk1/CS66urdf/urdf/CS66urdf.urdf",
             end_effector_frame_name="link6",
-            # maximum_substep_size=0.00334
             maximum_substep_size=0.0334
         )
 

@@ -1,17 +1,6 @@
-# Copyright (c) 2019-2022, NVIDIA CORPORATION.  All rights reserved.
-#
-# NVIDIA CORPORATION and its licensors retain all intellectual property
-# and proprietary rights in and to this software, related documentation
-# and any modifications thereto.  Any use, reproduction, disclosure or
-# distribution of this software and related documentation without an express
-# license agreement from NVIDIA CORPORATION is strictly prohibited.
-
-# Artificially limit the robot joints.  For example:
 # A joint with range +-pi would be limited to +-(pi-.01)
 joint_limit_buffers: [.01, .01, .01, .01, .01, .01]
 
-# RMPflow has many modifiable parameters, but these serve as a great start.
-# Most parameters will not need to be modified
 rmp_params:
     cspace_target_rmp:
         metric_scalar: 50.
@@ -81,21 +70,6 @@ canonical_resolve:
     max_acceleration_norm: 50.
     projection_tolerance: .01
     verbose: false
-
-
-# body_cylinders are used to promote self-collision avoidance between the robot and its base
-# The example below defines the robot base to be a capsule defined by the absolute coordinates pt1 and pt2.
-# The semantic name provided for each body_cylinder does not need to be present in the robot URDF.
-# body_cylinders:
-#      - name: base_link
-#        pt1: [0,0,.12]
-#        pt2: [0,0,0.]
-#        radius: .08
-#      - name: link6
-#        pt1: [0,0,.12]
-#        pt2: [0,0,.12]
-#        radius: .16
-
 body_cylinders:
     - name: base_link
       pt1: [0,0,.333]
