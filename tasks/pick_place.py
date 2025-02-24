@@ -33,7 +33,7 @@ class PickPlace(tasks.PickPlace):
         assets_root_path = get_assets_root_path()
         if assets_root_path is None:
             raise Exception("Could not find Isaac Sim assets folder")
-        asset_path= 'Collected_World2/World0.usd'
+        asset_path= '/mnt/disk1/css_robpt/CSrobot/Collected_World2/World0.usd'
 
         add_reference_to_stage(usd_path=asset_path, prim_path="/World/World0")
         gripper = ParallelGripper(
