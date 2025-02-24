@@ -45,8 +45,8 @@ camera1.initialize()
 camera2.initialize()
 
 # --- Create Separate Image Save Directories ---
-image_save_dir_1 = "images/camera1"
-image_save_dir_2 = "images/camera2"
+image_save_dir_1 = "data/images/camera1"
+image_save_dir_2 = "data/images/camera2"
 
 os.makedirs(image_save_dir_1, exist_ok=True)
 os.makedirs(image_save_dir_2, exist_ok=True)
@@ -106,8 +106,8 @@ while simulation_app.is_running():
             rgb_image_2 = camera2.get_rgb()
             image_path_2 = f"{image_save_dir_2}/frame_{step_counter}.npy"
             np.save(image_path_2, rgb_image_2)
-        if step_counter % 50 == 0:
-            print(f"✅ Images saved up to: {image_path_1}, {image_path_2}")
+        # if step_counter % 50 == 0:
+        #     print(f"✅ Images saved up to: {image_path_1}, {image_path_2}")
 
         # --- Log Data ---
         log_data["time"].append(step_counter)
@@ -131,8 +131,8 @@ while simulation_app.is_running():
         break
 
 # --- Save Logs ---
-save_path_npy = "simulation_logs.npy"
-save_path_csv = "simulation_logs.csv"
+save_path_npy = "data/simulation_logs.npy"
+save_path_csv = "data/simulation_logs.csv"
 
 np.save(save_path_npy, log_data)
 print(f"Simulation logs saved to {save_path_npy}")
